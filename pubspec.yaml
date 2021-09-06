@@ -42,7 +42,6 @@ dependencies:
   flutter_screenutil: ^0.4.2
   http: ^0.13.3
   desktop_window: ^0.3.0
-  mailer: ^3.0.3
   flutter_email_sender: ^5.0.2
   window_size:
     git:

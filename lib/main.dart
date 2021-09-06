@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projet_testosterone/screens/last_page.dart';
+import 'package:projet_testosterone/homePage_Screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LastPage(
-        nameUser: "Sinami Amine",
-      ),
+      home: HomePage(),
     );
   }
 }

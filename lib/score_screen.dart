@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
-import 'package:mailer/mailer.dart';
-import 'package:mailer/smtp_server.dart';
 import 'package:projet_testosterone/constants.dart';
 import 'package:projet_testosterone/screens/last_page.dart';
 
@@ -50,33 +48,6 @@ class _ScoreScreenState extends State<ScoreScreen> {
           }
         }));
     print(response.body);
-  }
-
-  sendMail() async {
-    String username = "contact.sinamiamine@gmail.com";
-    String password = "AmIne1996#";
-
-    final smtpServer = gmail(username, password);
-    // Creating the Gmail server
-
-    // Create our email message.
-    final message = Message()
-      ..from = Address(username)
-      ..recipients
-          .add(_mailController.text) //recipent email//bcc Recipents emails
-      ..subject =
-          'Test Testosterone :: 😀 :: ${DateTime.now()}' //subject of the email
-      ..html = "<h3>Thanks for</h3>"; //body of the email
-
-    try {
-      final sendReport = await send(message, smtpServer);
-      print('Message sent: ' +
-          sendReport.toString()); //print if the email is sent
-    } on MailerException catch (e) {
-      print('Message not sent. \n' +
-          e.toString()); //print if the email is not sent
-      // e.toString() will show why the email is not sending
-    }
   }
 
   Future add() async {
